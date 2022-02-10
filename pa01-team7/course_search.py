@@ -47,20 +47,21 @@ def topmenu():
         elif command in ['s','subject']:
             subject = input("enter a subject:")
             schedule = schedule.subject([subject])
+        # course  -- filter by subject/coursenumber
+        elif command in ['c', 'course']:
+            #TODO
+        # instructor -- filter by instructor email or lastname
+        elif command in ['i', 'instructor']:
+            #TODO
+        # title -- filter by phrase in the title
+        elif command in ['t', 'title']: 
+            #TODO
+        # Create your own filter (each team member creates their own)
+        elif command in ['', '']:
+            #TODO
         else:
             print('command',command,'is not supported')
             continue
-
-        # course  -- filter by subject/coursenumber
-        #TODO
-        # instructor -- filter by instructor email or lastname
-        #TODO
-        # title -- filter by phrase in the title
-        #TODO
-        # description -- filter by phrase in the description
-        #TODO
-        # Create your own filter (each team member creates their own)
-        #TODO
         
         print("courses has",len(schedule.courses),'elements',end="\n\n")
         print('here are the first 10')
