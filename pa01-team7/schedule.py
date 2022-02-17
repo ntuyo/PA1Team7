@@ -51,12 +51,10 @@ class Schedule():
             return self 
         
     def title(self,phrase):
-    #filters courses containing the phrase in their title
-    
-    def description(self,phrase) 
-    #filters courses containing the phrase in the description
-    
-    
+        ''' subject filters the courses by the phrase ___'''
+        return Schedule([course for course in self.courses if course['title'].contains(phrase)])
+    def description(self,phrase):
+        ''' subject filters the courses by the phrase '''
+        return Schedule([course for course in self.courses if course['description'] in phrase])
     #Create your own filter method (e.g. by class day or time?)
 
- 
