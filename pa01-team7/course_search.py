@@ -53,32 +53,30 @@ def topmenu():
             schedule = schedule.subject([subject])
         # course  -- filter by subject/coursenumber
         elif command in ['c', 'course']:
-            #TODO
-            pass
-        # instructor -- filter by instructor email or lastname
+
+            # instructor -- filter by instructor email or lastname
         elif command in ['i', 'instructor']:
-            #TODO
-            
-            instructor = input("enter instructor last name or email")
-           
-            if "@" in instructor:
-                
+
+        instructor = input("enter instructor last name or email")
+
+        if "@" in instructor:
+
                 schedule = schedule.lastname([instructor])
-            
-            if "@" not in instructor:
+
+        if "@" not in instructor:
 
                 schedule = schedule.email([instructor])
-                    ## what should i return 
-            pass
+                    # what should i return
+
         # title -- filter by phrase in the title
         elif command in ['t', 'title']:
-            
+
             title = input("enter a title")
 
             schedule = schedule.title([title])
-           
-            pass
+
             # Create your own filter (each team member creates their own)
+<<<<<<< Updated upstream
         elif command in ['', '']:
             
             Gabby = input("enter instructor last name or email")
@@ -103,6 +101,32 @@ def topmenu():
             
             #TODO
             pass
+=======
+        # elif command in ['', '']:
+
+        #     Gabby = input("enter")
+
+        #     #TODO
+        #     pass
+        # elif command in ['', '']:
+
+        #     Ianna = input("enter instructor ")
+
+        #     #TODO
+        #     pass
+        # elif command in ['', '']:
+
+        #     Nazari = input("enter instructor last ")
+
+        #     #TODO
+        #     pass
+        # elif command in ['', '']:
+
+        #     Tiffany = input("enter instructor last name")
+
+        #     #TODO
+        #     pass
+>>>>>>> Stashed changes
         else:
             print('command', command, 'is not supported')
             continue
