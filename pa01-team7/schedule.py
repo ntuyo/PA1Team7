@@ -43,27 +43,47 @@ class Schedule():
         ''' subject filters the courses by subject '''
         return Schedule([course for course in self.courses if course['subject'] in subjects])
 
+    def title(self,phrase):
+        return Schedule([course for course in self.courses if phrase in course['name']])
+
+    def description(self,description):
+        return Schedule([course for course in self.courses if description in course['description']])
+
+    ##Create your own filter method
+    ##isIndependent is the filter for part 6c
+    def isIndependent(self):
+        return Schedule([course for course in self.courses if course['independent_study'] == True])
+
+    def sortedLetter(self,letter):
+        return Schedule([course for course in self.courses if letter in course['name'][0] == letter])
+        ## Tiffany method
+        ## This method returns all the classes that start with the the letter that the user inputed
+
+    def amountWaiting(self,size):
+        return Schedule([course for course in self.courses if int(course['waiting']) < int(size)])
+        ## Gabby method
+        ## This method return the courses that have a waiting list less than the inputed size
+
+    def capacity(self):
+        return Schedule([course for course in self.courses if course['limit'] != None])
+        ## Jimkelly method
+        ## This method checks if the course has a capacity or not using limit
+
+    def isRemote(self):
+        return Schedule([course for course in self.courses if "remote" in course['details']])
+        ## Nazari method
+        ## this method checks if the course if remote by looking in the details section
+   
+    def checkStatus(self):
+        ''' filters '''
+        return Schedule([course for course in self.courses if course['status_text'] == 'Open'])
+        ## Ianna Method
+        ## this Method checks if the courses are open and returns them
+        
     def sort(self,field):
         if field=='subject':
             return Schedule(sorted(self.courses, key= lambda course: course['subject']))
-        else:
+        else: 
             print("can't sort by "+str(field)+" yet")
-            return self 
-        
-    def title(self,phrase):
-<<<<<<< Updated upstream
-        ''' subject filters the courses by the phrase ___'''
-        return Schedule([course for course in self.courses if course['title'].contains(phrase)])
-    def description(self,phrase):
-        ''' subject filters the courses by the phrase '''
-        return Schedule([course for course in self.courses if course['description'] in phrase])
-=======
-    #filters courses containing the phrase in their title
-    
-        def description(self,phrase):
-    #filters courses containing the phrase in the description
-    
-    
->>>>>>> Stashed changes
-    #Create your own filter method (e.g. by class day or time?)
-
+            return self
+ 
