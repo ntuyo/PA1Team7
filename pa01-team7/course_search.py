@@ -19,7 +19,12 @@ instructor (filter by instructor)
 subject (filter by subject, e.g. COSI, or LALS)
 title  (filter by phrase in title)
 description (filter by phrase in description)
-timeofday (filter by day and time, e.g. meets at 11 on Wed)
+independent (filter by Independent classes)
+letter (filter by First Letter)
+class size (filter by class size)
+status (filter by class status)
+capacity (filter by class capacity)
+remote (filter by remote or not)
 '''
 
 terms = {c['term'] for c in schedule.courses}
